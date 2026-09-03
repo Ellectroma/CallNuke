@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvcallnuke_keywords"]
+
+[ext_resource type="Theme" uid="uid://theme_callnuke" path="res://theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://sms_keywords.gd" id="2_script"]
+
+[node name="SmsKeywords" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.0627451, 0.07058824, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Root" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HeaderRow" type="HBoxContainer" parent="Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="Margin/Root/HeaderRow"]
+layout_mode = 2
+text = "<"
+
+[node name="Title" type="Label" parent="Margin/Root/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 34
+text = "SMS KEYWORDS"
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Margin/Root"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.6470588, 0.6745098, 0.7137255, 1)
+text = "Messages containing these words will be allowed through."
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margin/Root"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ListContainer" type="VBoxContainer" parent="Margin/Root/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="AddRow" type="HBoxContainer" parent="Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="KeywordInput" type="LineEdit" parent="Margin/Root/AddRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g. PayPal"
+
+[node name="AddButton" type="Button" parent="Margin/Root/AddRow"]
+layout_mode = 2
+text = "+ Add"
+
+[connection signal="pressed" from="Margin/Root/HeaderRow/BackButton" to="." method="_on_back_pressed"]
+[connection signal="text_submitted" from="Margin/Root/AddRow/KeywordInput" to="." method="_on_keyword_submitted"]
+[connection signal="pressed" from="Margin/Root/AddRow/AddButton" to="." method="_on_add_pressed"]

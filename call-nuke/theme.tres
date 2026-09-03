@@ -1,0 +1,72 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://theme_callnuke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.1137255, 0.1215686, 0.1372549, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.1882353, 0.2039216, 0.2313726, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.2431373, 0.2627451, 0.2941177, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lineedit"]
+bg_color = Color(0.08235294, 0.08627451, 0.09803922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2784314, 0.2980392, 0.3294118, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+
+[resource]
+default_font_size = 30
+Button/colors/font_color = Color(0.9098039, 0.9215686, 0.9411765, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.6, 0.85, 1, 1)
+Button/font_sizes/font_size = 28
+Button/styles/normal = SubResource("StyleBoxFlat_button")
+Button/styles/hover = SubResource("StyleBoxFlat_button_hover")
+Button/styles/pressed = SubResource("StyleBoxFlat_button_hover")
+Button/styles/disabled = SubResource("StyleBoxFlat_button")
+Label/colors/font_color = Color(0.9098039, 0.9215686, 0.9411765, 1)
+Label/font_sizes/font_size = 28
+LineEdit/colors/font_color = Color(0.9098039, 0.9215686, 0.9411765, 1)
+LineEdit/colors/font_placeholder_color = Color(0.5019608, 0.5254902, 0.5647059, 1)
+LineEdit/font_sizes/font_size = 28
+LineEdit/styles/normal = SubResource("StyleBoxFlat_lineedit")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_lineedit")
+Panel/styles/panel = SubResource("StyleBoxFlat_panel")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_panel")
+CheckButton/font_sizes/font_size = 28
+CheckButton/colors/font_color = Color(0.9098039, 0.9215686, 0.9411765, 1)

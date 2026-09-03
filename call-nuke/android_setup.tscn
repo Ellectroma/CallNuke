@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvcallnuke_setup"]
+
+[ext_resource type="Theme" uid="uid://theme_callnuke" path="res://theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://android_setup.gd" id="2_script"]
+
+[node name="AndroidSetup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.0627451, 0.07058824, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Margin" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Root" type="VBoxContainer" parent="ScrollContainer/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="HeaderRow" type="HBoxContainer" parent="ScrollContainer/Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="ScrollContainer/Margin/Root/HeaderRow"]
+layout_mode = 2
+text = "<"
+
+[node name="Title" type="Label" parent="ScrollContainer/Margin/Root/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 34
+text = "ANDROID SETUP"
+vertical_alignment = 1
+
+[node name="RoleCard" type="PanelContainer" parent="ScrollContainer/Margin/Root"]
+layout_mode = 2
+
+[node name="RoleVBox" type="VBoxContainer" parent="ScrollContainer/Margin/Root/RoleCard"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RoleHeader" type="Label" parent="ScrollContainer/Margin/Root/RoleCard/RoleVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Call Screening Role"
+
+[node name="RoleStatus" type="Label" parent="ScrollContainer/Margin/Root/RoleCard/RoleVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Status: checking..."
+
+[node name="RoleButton" type="Button" parent="ScrollContainer/Margin/Root/RoleCard/RoleVBox"]
+layout_mode = 2
+text = "Request Role"
+
+[node name="ContactsCard" type="PanelContainer" parent="ScrollContainer/Margin/Root"]
+layout_mode = 2
+
+[node name="ContactsVBox" type="VBoxContainer" parent="ScrollContainer/Margin/Root/ContactsCard"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ContactsHeader" type="Label" parent="ScrollContainer/Margin/Root/ContactsCard/ContactsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Contacts Permission"
+
+[node name="ContactsStatus" type="Label" parent="ScrollContainer/Margin/Root/ContactsCard/ContactsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Status: checking..."
+
+[node name="ContactsButton" type="Button" parent="ScrollContainer/Margin/Root/ContactsCard/ContactsVBox"]
+layout_mode = 2
+text = "Grant Permission"
+
+[node name="SmsCard" type="PanelContainer" parent="ScrollContainer/Margin/Root"]
+layout_mode = 2
+
+[node name="SmsVBox" type="VBoxContainer" parent="ScrollContainer/Margin/Root/SmsCard"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SmsHeader" type="Label" parent="ScrollContainer/Margin/Root/SmsCard/SmsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "SMS Permission"
+
+[node name="SmsStatus" type="Label" parent="ScrollContainer/Margin/Root/SmsCard/SmsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Status: checking..."
+
+[node name="SmsButton" type="Button" parent="ScrollContainer/Margin/Root/SmsCard/SmsVBox"]
+layout_mode = 2
+text = "Grant Permission"
+
+[node name="Note" type="Label" parent="ScrollContainer/Margin/Root"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.6470588, 0.6745098, 0.7137255, 1)
+text = "Note: SMS filtering categorizes messages but cannot fully block them without being the default SMS app."
+autowrap_mode = 2
+
+[connection signal="pressed" from="ScrollContainer/Margin/Root/HeaderRow/BackButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ScrollContainer/Margin/Root/RoleCard/RoleVBox/RoleButton" to="." method="_on_role_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Margin/Root/ContactsCard/ContactsVBox/ContactsButton" to="." method="_on_contacts_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/Margin/Root/SmsCard/SmsVBox/SmsButton" to="." method="_on_sms_button_pressed"]

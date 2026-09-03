@@ -1,3 +1,18 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
+
+# Android build template — ignore everything except our custom source
+/android/*
+!/android/src/
+/android/src/*
+!/android/src/main/
+/android/src/main/*
+!/android/src/main/java/
+/android/src/main/java/*
+!/android/src/main/java/com/
+/android/src/main/java/com/*
+!/android/src/main/java/com/callnuke/
+/android/src/main/java/com/callnuke/*
+!/android/src/main/java/com/callnuke/firewall/
+!/android/src/main/AndroidManifest.xml
+# local.properties contains machine-specific SDK paths — do not track

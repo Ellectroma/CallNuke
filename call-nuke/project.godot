@@ -13,6 +13,15 @@ config_version=5
 config/name="CallNuke"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+run/main_scene="res://main.tscn"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=2400
+window/handheld/orientation=1
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
 
 [dotnet]
 

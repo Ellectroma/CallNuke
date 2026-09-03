@@ -1,0 +1,170 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvcallnuke_main"]
+
+[ext_resource type="Theme" uid="uid://theme_callnuke" path="res://theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://main.gd" id="2_script"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.0627451, 0.07058824, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Margin" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 48
+
+[node name="Content" type="VBoxContainer" parent="ScrollContainer/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="ScrollContainer/Margin/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "COMMUNICATION FIREWALL"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CallsCard" type="PanelContainer" parent="ScrollContainer/Margin/Content"]
+layout_mode = 2
+
+[node name="CallsVBox" type="VBoxContainer" parent="ScrollContainer/Margin/Content/CallsCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CallsHeader" type="Label" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.6, 0.85, 1, 1)
+text = "CALLS"
+
+[node name="CallsRow" type="HBoxContainer" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox"]
+layout_mode = 2
+
+[node name="CallsLabel" type="Label" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox/CallsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Protection"
+
+[node name="CallToggle" type="CheckButton" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox/CallsRow" node_paths=PackedStringArray()]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CallsDesc" type="Label" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.6470588, 0.6745098, 0.7137255, 1)
+text = "Only trusted numbers can call."
+autowrap_mode = 2
+
+[node name="CallsCountRow" type="HBoxContainer" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox"]
+layout_mode = 2
+
+[node name="CallsCountLabel" type="Label" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox/CallsCountRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Blocked today"
+
+[node name="CallsCountValue" type="Label" parent="ScrollContainer/Margin/Content/CallsCard/CallsVBox/CallsCountRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="SmsCard" type="PanelContainer" parent="ScrollContainer/Margin/Content"]
+layout_mode = 2
+
+[node name="SmsVBox" type="VBoxContainer" parent="ScrollContainer/Margin/Content/SmsCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SmsHeader" type="Label" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.6, 0.85, 1, 1)
+text = "SMS"
+
+[node name="SmsRow" type="HBoxContainer" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox"]
+layout_mode = 2
+
+[node name="SmsLabel" type="Label" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox/SmsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Protection"
+
+[node name="SmsToggle" type="CheckButton" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox/SmsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SmsDesc" type="Label" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.6470588, 0.6745098, 0.7137255, 1)
+text = "Filter unwanted messages while allowing trusted services."
+autowrap_mode = 2
+
+[node name="SmsCountRow" type="HBoxContainer" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox"]
+layout_mode = 2
+
+[node name="SmsCountLabel" type="Label" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox/SmsCountRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Filtered today"
+
+[node name="SmsCountValue" type="Label" parent="ScrollContainer/Margin/Content/SmsCard/SmsVBox/SmsCountRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="ScrollContainer/Margin/Content"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AllowedNumbersButton" type="Button" parent="ScrollContainer/Margin/Content/ButtonsVBox"]
+layout_mode = 2
+text = "Allowed Numbers"
+
+[node name="SmsKeywordsButton" type="Button" parent="ScrollContainer/Margin/Content/ButtonsVBox"]
+layout_mode = 2
+text = "SMS Keywords"
+
+[node name="AndroidSetupButton" type="Button" parent="ScrollContainer/Margin/Content/ButtonsVBox"]
+layout_mode = 2
+text = "Android Setup"
+
+[node name="RefreshTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="toggled" from="ScrollContainer/Margin/Content/CallsCard/CallsVBox/CallsRow/CallToggle" to="." method="_on_call_toggle_toggled"]
+[connection signal="toggled" from="ScrollContainer/Margin/Content/SmsCard/SmsVBox/SmsRow/SmsToggle" to="." method="_on_sms_toggle_toggled"]
+[connection signal="pressed" from="ScrollContainer/Margin/Content/ButtonsVBox/AllowedNumbersButton" to="." method="_on_allowed_numbers_pressed"]
+[connection signal="pressed" from="ScrollContainer/Margin/Content/ButtonsVBox/SmsKeywordsButton" to="." method="_on_sms_keywords_pressed"]
+[connection signal="pressed" from="ScrollContainer/Margin/Content/ButtonsVBox/AndroidSetupButton" to="." method="_on_android_setup_pressed"]
+[connection signal="timeout" from="RefreshTimer" to="." method="_on_refresh_timer_timeout"]
