@@ -15,4 +15,5 @@
 /android/src/main/java/com/callnuke/*
 !/android/src/main/java/com/callnuke/firewall/
 !/android/src/main/AndroidManifest.xml
+!/android/build.gradle
 # local.properties contains machine-specific SDK paths — do not track
